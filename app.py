@@ -18,7 +18,7 @@ USERNAME_CAP = 15
 SPAM_TIME_LIMIT = 2  # seconds
 SPAM_LIMIT = 5  # messages within the time limit
 
-# List of banned words (add more as needed)
+# List of banned words
 banned_words = [
     "nigger", "nigga", "chink", "faggot", "dyke",
     "spic", "wetback", "gook", "kike", "bitch",
@@ -142,4 +142,4 @@ def download_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 if __name__ == '__main__':
-    socketio.run(app, port=6968, debug=True)
+    socketio.run(app, host='0.0.0.0', port=int(os.environ.get("PORT", 6968)), debug=True)
