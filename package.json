@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "build": "echo 'Building your Flask app...'",
+    "start": "python app.py"
+  },
+  "dependencies": {}
+}
