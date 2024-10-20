@@ -1,0 +1,2 @@
+2024-10-20 16:40:47 - User: adam, IP: 127.0.0.1, Device: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
+2024-10-20 16:41:46 - User: yo, IP: 127.0.0.1, Device: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36

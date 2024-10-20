@@ -1,0 +1,3 @@
+2024-10-20 16:30:50 - Banned username attempt: nigga, IP: 127.0.0.1
+2024-10-20 16:31:26 - Banned word used: chink by hiu, IP: 127.0.0.1
+2024-10-20 16:34:11 - Banned username attempt: chink, IP: 127.0.0.1
