@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <ul id="messages"></ul>
+        <input id="message-input" placeholder="Type a message..." autocomplete="off">
+        <input type="file" id="file-input">
+        <button id="send-button">Send</button>
+        <button id="upload-button">Upload</button>
+    </div>
+
+    <script>
+        const socket = io();
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+        const uploadButton = document.getElementById('upload-button');
+        const messages = document.getElementById('messages');
+        const fileInput = document.getElementById('file-input');
+
+        const username = prompt("Enter your username:");
+        socket.emit('join', username);
+
+        sendButton.onclick = () => sendMessage();
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        uploadButton.onclick = () => uploadFile();
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                socket.emit('send_message', { message });
+                messageInput.value = '';
+            }
+        }
+
+        function uploadFile() {
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function() {
+                    socket.emit('upload_file', { file: file, username: username });
+                    fileInput.value = '';
+                };
+                reader.readAsArrayBuffer(file);
+            }
+        }
+
+        socket.on('message', (msg) => {
+            const li = document.createElement('li');
+            li.innerHTML = msg; // Use innerHTML to support links
+            messages.appendChild(li);
+            messages.scrollTop = messages.scrollHeight; // Scroll to the bottom
+        });
+    </script>
+</body>
+</html>
