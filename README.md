@@ -1,3 +1,5 @@
+# My Work / Socials
+linktr.ee/yngstami
 # StamiChat
 Just a chat server I made in Python. It's quite easy to run, designed to work on localhost, but you could also make it work on Replit.
 
@@ -12,3 +14,5 @@ The code contains a list of banned words, including slurs, and I plan to add mor
 3. Under the "Environment" section, set a new environment variable:
    - **Key:** `SECRET`
    - **Value:** Your own secret key (e.g., `supersecretkey`).
+ If in RARE cases the link isnt working, Simply go to your dashboard and click blueprints at the time.
+Create New Blueprint then scroll down and paste the github link in the *Public Git repository* Area then press Continue and it should do it for you.
