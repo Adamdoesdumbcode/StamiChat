@@ -1,9 +1,12 @@
+version: 1
 services:
   - type: web
-    name: stami-chat
+    name: StamiChat
     env: python
-    plan: free
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "python app.py"  # Change this if your main file is named differently
+    startCommand: "python app.py"
     envVars:
-      SECRET: "your_secret_key"  # Replace with your actual secret key
+      - key: SECRET
+        value: "your_secret_key"  # Placeholder, users should replace this
+    plan: free
+    region: ohio
