@@ -6,7 +6,6 @@ The code contains a list of banned words, including slurs, and I plan to add mor
 
 # Deployment
 [![Deploy on Render](https://render.com/deploy-to-render/button.svg)](https://dashboard.render.com/deploy?repo=github.com/Adamdoesdumbcode/StamiChat)
-## How to deploy in Render
 ### Setup Instructions
 1. Deploy the app using the Render button.
 2. After deployment, go to your Render dashboard.
